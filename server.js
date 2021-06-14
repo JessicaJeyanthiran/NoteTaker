@@ -3,7 +3,7 @@ const htmlroutes = require('./routes/htmlroutes');
 const apiroutes = require('./routes/apiroutes');
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({
     extended:true
@@ -18,6 +18,6 @@ app.use("/", htmlroutes);
 
 
 app.listen(PORT, () => {
-    console.log(`Listening on PORT 3000`);
+    console.log(`Listening on ${PORT}!`);
 });
 
